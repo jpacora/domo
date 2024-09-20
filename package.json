@@ -1,0 +1,15 @@
+{
+  "name": "domo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Pacora",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dht": "github:niklauslee/dht",
+    "servo": "github:niklauslee/servo"
+  }
+}

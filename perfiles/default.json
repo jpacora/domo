@@ -1,0 +1,65 @@
+[
+    {
+        "temperatura_min": 18,
+        "temperatura_max": 26,
+        "humedad_min": 50,
+        "humedad_max": 70,
+        "acciones": null
+    },
+    {
+        "temperatura_min": 26,
+        "temperatura_max": null,
+        "humedad_min": 50,
+        "humedad_max": 70,
+        "acciones": ["abrir_puertas", "encender_ventilador"]
+    },
+    {
+        "temperatura_min": 26,
+        "temperatura_max": null,
+        "humedad_min": 70,
+        "humedad_max": null,
+        "acciones": ["abrir_puertas", "encender_ventilador"]
+    },
+    {
+        "temperatura_min": 26,
+        "temperatura_max": null,
+        "humedad_min": null,
+        "humedad_max": 50,
+        "acciones": ["abrir_puertas"]
+    },
+    {
+        "temperatura_min": null,
+        "temperatura_max": 18,
+        "humedad_min": 50,
+        "humedad_max": 70,
+        "acciones": ["cerrar_puertas", "apagar_ventilador"]
+    },
+    {
+        "temperatura_min": null,
+        "temperatura_max": 18,
+        "humedad_min": 70,
+        "humedad_max": null,
+        "acciones": ["cerrar_puertas", "encender_ventilador_brevemente"]
+    },
+    {
+        "temperatura_min": null,
+        "temperatura_max": 18,
+        "humedad_min": null,
+        "humedad_max": 50,
+        "acciones": ["cerrar_puertas", "apagar_ventilador"]
+    },
+    {
+        "temperatura_min": 18,
+        "temperatura_max": 26,
+        "humedad_min": 70,
+        "humedad_max": null,
+        "acciones": ["encender_ventilador", "abrir_puertas_opcional"]
+    },
+    {
+        "temperatura_min": 18,
+        "temperatura_max": 26,
+        "humedad_min": null,
+        "humedad_max": 50,
+        "acciones": ["cerrar_puertas", "apagar_ventilador"]
+    }
+]
