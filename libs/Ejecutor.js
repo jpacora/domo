@@ -29,7 +29,7 @@ class Ejecutor {
         return null
     }
 
-    ejecutarAcciones(acciones, puerta) {
+    ejecutarAcciones(acciones) {
         // vemos que existan accioens por ejecutar
         if(acciones == null) {
             return;
