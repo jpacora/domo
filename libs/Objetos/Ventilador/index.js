@@ -1,4 +1,4 @@
-const Relay = require('../../Hardware/Relay')
+const Relay = require('../../Hardware/Actuadores/Relay')
 
 class Ventilador {
 
