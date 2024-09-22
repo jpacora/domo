@@ -4,7 +4,7 @@ const puerta = new Puerta(14)
 
 setInterval(() => {
     // si esta cerrado
-    if(puerta.cerrado == true) {
+    if(puerta.cerrada == true) {
         puerta.abrir()
     } else {
         puerta.cerrar()

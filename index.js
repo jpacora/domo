@@ -1,19 +1,34 @@
 const Ejecutor = require('./libs/Ejecutor')
 
-const SensorDHT = require('./libs/Sensores/DHT')
+const SensorAmbiental = require('./libs/Objetos/SensorAmbiental')
+const Puerta = require('./libs/Objetos/Puerta')
+const Ventilador = require('./libs/Objetos/Ventilador')
 
-const ejecutor = new Ejecutor()
-const dht = new SensorDHT()
+
+const sensorAmbiental = new SensorAmbiental()
+const puerta = new Puerta()
+const ventilador = new Ventilador()
+
+const ejecutor = new Ejecutor({
+    puerta,
+    ventilador,
+    sensorAmbiental
+})
+
 
 setInterval(() => {
 
-    const vals = dht.leerValores()
+    const { ambiente } = sensorAmbiental.leerAmbiente()
     // verificamos que haya valores
-    if(vals != null) {
+    if(ambiente != null) {
+        const state = ejecutor.telemetria()
         // ejecutamos
-        const { humedad, temperatura } = vals
+        const { humedad, temperatura } = ambiente
         const acciones = ejecutor.determinarAcciones(temperatura, humedad)
-        console.log({ humedad, temperatura, acciones })
+        console.log({ambiente, acciones, state})
+        // ejecutamos las acciones
+        ejecutor.ejecutarAcciones(acciones)
+        console.log("---------------------------")
     }
     
 }, 2500)

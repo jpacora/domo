@@ -2,7 +2,7 @@ const ActuadorServo = require('../../Hardware/Actuadores/Servo')
 
 class Puerta {
 
-    cerrado = null
+    cerrada = null
 
     constructor(pin=14) {
         this.servo = new ActuadorServo(pin)
@@ -10,22 +10,22 @@ class Puerta {
 
     cerrar() {
         // no hacer nada si ya esta cerrado
-        if(this.cerrado === true) {
+        if(this.cerrada === true) {
             return;
         }
         // cerrar la puerta
         this.servo.rotar(0)
-        this.cerrado = true
+        this.cerrada = true
     }
 
     abrir() {
         // no hacer nada si ya esta abierto
-        if(this.cerrado === false) {
+        if(this.cerrada === false) {
             return;
         }
         // cerrar la puerta
         this.servo.rotar(90)
-        this.cerrado = false
+        this.cerrada = false
     }
 
 }
