@@ -14,7 +14,8 @@ class SensorAmbiental {
 
     leerAmbiente() {
         const ambiente = this.dht.leerValores()
-        const phValor = this.phSensor.leer_nivel_ph_simple()
+        const phValor = null
+        //const phValor = this.phSensor.leer_nivel_ph_simple()
         // actualizar datos internos
         if(ambiente != null) {
             this.humedad = ambiente.humedad

@@ -1,0 +1,9 @@
+{
+    "WiFi_Activar": true,
+    "WiFi_SSID": "Cueva Wifi",
+    "WiFi_Password": "Mox12345678",
+    "MQTT_IP": "138.68.79.95",
+    "MQTT_Puerto": 20245,
+    "MQTT_Topic_Telemetria": "pico/telemetria",
+    "MQTT_Topic_Comandos": "pico/comandos"
+}
