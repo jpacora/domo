@@ -7,6 +7,7 @@ const pico_cyw43 = new PicoCYW43()
 class Ejecutor {
 
     bloqueado = false
+    modoAutomatico = true
 
     constructor(dispositivos={}, perfil=defaultProfile) {
         this.bloquear = this.bloquear.bind(this)
@@ -30,14 +31,14 @@ class Ejecutor {
                 return regla.acciones;
             }
         }
-        return null
+        return ['proteger_domo']
+        //return null
     }
 
     ejecutarAcciones(acciones) {
         // vemos que existan accioens por ejecutar
         if(acciones == null) {
             // clima idoneo
-            acciones = ['proteger_domo']
             return;
         }
         // verificamos si está bloqueado
@@ -88,9 +89,11 @@ class Ejecutor {
     }
 
     telemetria() {
+        const { modoAutomatico } = this
         const { cerrada:puertaCerrada } = this.puerta
         const { prendido:ventiladorPrendido } = this.ventilador
         return {
+            modoAutomatico,
             puertaCerrada,
             ventiladorPrendido
         }

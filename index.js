@@ -36,8 +36,12 @@ setInterval(() => {
         const { humedad, temperatura } = ambiente
         const acciones = ejecutor.determinarAcciones(temperatura, humedad)
         console.log({ambiente, ph, acciones, telemetria})
-        // ejecutamos las acciones
-        ejecutor.ejecutarAcciones(acciones)
+        // vemos si está en modo automatico
+        if(ejecutor.modoAutomatico == true) {
+            // ejecutamos las acciones
+            ejecutor.ejecutarAcciones(acciones)
+        }
+        
         console.log("---------------------------")
     }
     
