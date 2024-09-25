@@ -8,12 +8,12 @@ class Relay {
     }
 
     on() {
-        digitalWrite(this.pin, HIGH)
+        digitalWrite(this.pin, LOW)
         console.log(`[Relay] ON`)
     }
 
     off() {
-        digitalWrite(this.pin, LOW)
+        digitalWrite(this.pin, HIGH)
         console.log(`[Relay] OFF`)
     }
 }
