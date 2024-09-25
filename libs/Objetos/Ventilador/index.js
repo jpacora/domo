@@ -2,7 +2,7 @@ const Relay = require('../../Hardware/Actuadores/Relay')
 
 class Ventilador {
 
-    prendido = null
+    prendido = false
     
     constructor(pin=13) {
         this.relay = new Relay(pin)

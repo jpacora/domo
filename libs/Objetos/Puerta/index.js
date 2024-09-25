@@ -6,6 +6,8 @@ class Puerta {
 
     constructor(pin=14) {
         this.servo = new ActuadorServo(pin)
+        // cerrar por defecto
+        this.cerrar()
     }
 
     cerrar() {
