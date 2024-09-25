@@ -1,0 +1,9 @@
+{
+    "WiFi_Activar": true,
+    "WiFi_SSID": "iPhone Vex",
+    "WiFi_Password": "15091999",
+    "MQTT_IP": "35.172.255.228",
+    "MQTT_Puerto": 1883,
+    "MQTT_Topic_Telemetria": "pico/telemetria",
+    "MQTT_Topic_Comandos": "pico/comandos"
+}

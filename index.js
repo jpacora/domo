@@ -1,4 +1,4 @@
-const config = require('./config.json')
+const config = require('./config.cueva.json')
 const Ejecutor = require('./libs/Ejecutor')
 const Internet = require('./libs/Internet')
 

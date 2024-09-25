@@ -1,5 +1,8 @@
 const defaultProfile = require('../perfiles/default.json')
 
+const { PicoCYW43 } = require('pico_cyw43')
+const pico_cyw43 = new PicoCYW43()
+
 
 class Ejecutor {
 
@@ -77,6 +80,21 @@ class Ejecutor {
         return {
             puertaCerrada,
             ventiladorPrendido
+        }
+    }
+
+    /*
+        LED Indicador
+    */
+
+    flashPattern(onTime=200, offTime=200, repeat=1) {
+        for (let i = 0; i < repeat; i++) {
+            // Enciende el LED
+            pico_cyw43.putGpio(0, true)
+            delay(onTime) // Espera el tiempo que el LED debe estar encendido
+            // Apaga el LED
+            pico_cyw43.putGpio(0, false)
+            delay(offTime) // Espera el tiempo que el LED debe estar apagado
         }
     }
 

@@ -86,7 +86,16 @@ class Internet {
     enviarTelemetria(data) {
         const { MQTT_Topic_Telemetria } = this.opts
         if(this.conWiFi == true && this.conectado === true && this.mqtt !== null) {
+            // enviar al topico general
             this.mqtt.publish(MQTT_Topic_Telemetria, JSON.stringify(data))
+            // flashear leds
+            this.ejecutor.flashPattern(200, 100, 5)
+            // emit
+            Object.keys(data).forEach(item => {
+                // publish
+                const topic = `${MQTT_Topic_Telemetria}/${item}`
+                this.mqtt.publish(topic, JSON.stringify(data[item]))
+            })   
         }
     }
 
