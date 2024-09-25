@@ -130,11 +130,11 @@ class Internet {
                 this.ejecutor.correrAccion('apagar_ventilador')
                 break;
             case 'modo.automatico':
-                    this.ejecutor.modoAutomatico = true
-                    break
+                this.ejecutor.modoAutomatico = true
+                break;
             case 'modo.manual':
-                    this.ejecutor.modoAutomatico = false
-                    break
+                this.ejecutor.modoAutomatico = false
+                break;
             default:
                 console.log(`[MQTT] No existe el tipo de comando ${comando.tipo}`, { comando })
         }

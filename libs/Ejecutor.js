@@ -90,11 +90,11 @@ class Ejecutor {
     }
 
     telemetria() {
-        const { modoAutomatico } = this
+        const { modoAutomatico:modo } = this
         const { cerrada:puertaCerrada } = this.puerta
         const { prendido:ventiladorPrendido } = this.ventilador
         return {
-            modoAutomatico,
+            modo,
             puertaCerrada,
             ventiladorPrendido
         }
