@@ -23,6 +23,10 @@ const internet = new Internet(config, ejecutor)
 
 setInterval(() => {
 
+    if(ejecutor.bloqueado == true) {
+        return console.log(`[Main] Ejecutor bloqueado`)
+    }
+
     const { ambiente, ph } = sensorAmbiental.leerAmbiente()
     // verificamos que haya valores
     if(ambiente != null) {

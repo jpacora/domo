@@ -9,6 +9,7 @@ class Ejecutor {
     bloqueado = false
 
     constructor(dispositivos={}, perfil=defaultProfile) {
+        this.bloquear = this.bloquear.bind(this)
         this.perfil = perfil
         //
         this.puerta = dispositivos.puerta
@@ -35,6 +36,8 @@ class Ejecutor {
     ejecutarAcciones(acciones) {
         // vemos que existan accioens por ejecutar
         if(acciones == null) {
+            // clima idoneo
+            acciones = ['proteger_domo']
             return;
         }
         // verificamos si está bloqueado
@@ -65,9 +68,19 @@ class Ejecutor {
                 break
             case 'encender_ventilador_brevemente':
                 console.log('encender_ventilador_brevemente')
+                this.ventilador.prender()
+                this.bloquear(15 * 1000, () => {
+                    // despues de bloquear
+                    this.ventilador.apagar()
+                })
                 break
             case 'abrir_puertas_opcional':
                 console.log('abrir_puertas_opcional')
+                break
+            case 'proteger_domo':
+                console.log('proteger_domo')
+                this.puerta.cerrar()
+                this.ventilador.apagar()
                 break
             default:
                 console.log(`[ERROR] No existe la acción "${accion}"`)
@@ -81,6 +94,18 @@ class Ejecutor {
             puertaCerrada,
             ventiladorPrendido
         }
+    }
+
+    bloquear(ms, callback) {
+        this.bloqueado = true
+        setTimeout(() => {
+            // ejecutar callback
+            if(callback) {
+                callback()
+            }
+            // desbloqueamos
+            this.bloqueado = false
+        }, ms)
     }
 
     /*
