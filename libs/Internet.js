@@ -113,6 +113,7 @@ class Internet {
         if(!comando.tipo) {
             return console.error(`[MQTT] El comando no tiene un tipo`, comando)
         }
+        console.log(`[MQTT] Ejecutando comando:`, comando)
         // ejecutamos
         switch(comando.tipo) {
             case 'puerta.abrir':
