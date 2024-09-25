@@ -39,7 +39,8 @@ class Ejecutor {
         // vemos que existan accioens por ejecutar
         if(acciones == null) {
             // clima idoneo
-            return;
+            acciones = ['proteger_domo']
+            //return;
         }
         // verificamos si está bloqueado
         if(this.bloqueado == true) {

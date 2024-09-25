@@ -4,7 +4,7 @@
         "temperatura_max": 26,
         "humedad_min": 50,
         "humedad_max": 70,
-        "acciones": null
+        "acciones": ["proteger_domo"]
     },
     {
         "temperatura_min": 26,
